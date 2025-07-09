@@ -230,29 +230,69 @@
         min-height: 0;
       }
       .side-top, .side-bottom {
-        width: 50%;
+        width: 100%;
         padding: 20px 0;
       }
       .main {
-        padding: 30px 10px 20px 10px;
+        padding: 30px 5vw 20px 5vw;
+      }
+      .profile-img {
+        height: 200px;
+      }
+      .name {
+        font-size: 2rem;
+      }
+      .title {
+        font-size: 1.1rem;
       }
     }
     @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+      .side {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid var(--accent);
+        flex-direction: column;
+        padding: 0;
+      }
+      .side-top, .side-bottom {
+        width: 100%;
+        padding: 10px 0;
+      }
       .main {
         padding: 10px 2vw;
       }
       .section-title {
-        padding: 10px 10px;
-        font-size: 1.1rem;
+        padding: 8px 6px;
+        font-size: 1rem;
       }
       .about-title {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
       }
       .name {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+      }
+      .title {
+        font-size: 0.95rem;
       }
       .profile-img {
-        height: 180px;
+        height: 120px;
+      }
+      .contact, .sidebar-linkedin {
+        font-size: 0.95rem;
+      }
+      .skills-list {
+        gap: 6px 8px;
+      }
+      .skill {
+        font-size: 0.9rem;
+        padding: 4px 10px;
+      }
+      .resume-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
       }
     }
   </style>
