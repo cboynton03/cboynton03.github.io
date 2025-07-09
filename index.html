@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catherine Boynton | Resume</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #f7f1e6;
+      --side-bg: #dcc7aa;
+      --accent: #9b7a53;
+      --text-main: #7a5a32;
+      --text-light: #a08a6a;
+      --white: #fff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--main-bg);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .side {
+      background: var(--side-bg);
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0 40px 0;
+      border-right: 3px solid var(--accent);
+    }
+    .side-top {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .profile-img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center;
+      border-bottom: 3px solid var(--accent);
+    }
+    .name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 40px 0 10px 0;
+      text-align: center;
+      color: var(--text-main);
+    }
+    .title {
+      font-size: 1.3rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .location {
+      font-size: 1rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .contact {
+      font-size: 1rem;
+      color: var(--text-main);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .side-bottom {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .connect {
+      font-size: 1rem;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .icons {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 10px;
+    }
+    .icons a {
+      color: var(--accent);
+      font-size: 2rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .icons a:hover {
+      color: var(--text-main);
+    }
+    .arrow {
+      margin-left: 10px;
+      font-size: 1.2rem;
+      vertical-align: middle;
+    }
+    .main {
+      flex: 1;
+      padding: 60px 60px 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background: var(--main-bg);
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-title {
+      background: var(--accent);
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 12px 30px;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .about-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+    .about-desc {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .edu, .exp, .coursework {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .edu-item, .exp-item, .coursework-item {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .edu-date, .exp-date {
+      min-width: 70px;
+      font-weight: 500;
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+    .edu-details, .exp-details {
+      flex: 1;
+    }
+    .edu-degree, .exp-role {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-main);
+    }
+    .edu-school, .exp-org {
+      font-size: 1rem;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+    .edu-extra {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    .exp-list {
+      margin-top: 4px;
+      margin-left: 18px;
+      color: var(--text-main);
+      font-size: 1rem;
+      list-style: disc;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .skill {
+      background: var(--side-bg);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 16px;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .resume-btn {
+      margin-top: 30px;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 3px;
+      padding: 16px 60px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-end;
+    }
+    .resume-btn:hover {
+      background: #7a5a32;
+    }
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+      .side {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid var(--accent);
+        flex-direction: row;
+        padding: 0;
+        min-height: 0;
+      }
+      .side-top, .side-bottom {
+        width: 50%;
+        padding: 20px 0;
+      }
+      .main {
+        padding: 30px 10px 20px 10px;
+      }
+    }
+    @media (max-width: 600px) {
+      .main {
+        padding: 10px 2vw;
+      }
+      .section-title {
+        padding: 10px 10px;
+        font-size: 1.1rem;
+      }
+      .about-title {
+        font-size: 1.3rem;
+      }
+      .name {
+        font-size: 1.5rem;
+      }
+      .profile-img {
+        height: 180px;
+      }
+    }
+  </style>
+  <!-- Font Awesome 6 CDN for all icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papmQ1Q0h6Q6Q1Q0h6Q6Q1Q0h6Q6Q1Q0h6Q6Q1Q0h6Q6Q1Q0h6Q6Q1Q0h6Q6Q1Q0h6Q6Q1Q0h6Q6Q1Q0h6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <div class="side">
+      <div class="side-top">
+        <img src="20250120_165520.jpg" alt="Profile" class="profile-img">
+        <div class="name">Catherine Boynton</div>
+        <div class="title">Public Policy Researcher & Analyst</div>
+        <div class="location">Richmond, VA</div>
+        <div class="contact">
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 4px;">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:13194712877" style="color: inherit; text-decoration: none;">(319) 471-2877</a>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 4px;">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:catherinebassettboynton@gmail.com" style="color: inherit; text-decoration: none;">catherinebassettboynton@gmail.com</a>
+          </div>
+          <div class="sidebar-linkedin" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fa-brands fa-linkedin" style="color: var(--accent);"></i>
+            <a href="https://www.linkedin.com/in/catherine-b-55631a238/" target="_blank" style="color: var(--accent); text-decoration: underline;">linkedin.com/in/catherine-b-55631a238/</a>
+          </div>
+        </div>
+      </div>
+      <div class="side-bottom">
+        <div class="connect">CONNECT WITH ME <span class="arrow">&rarr;</span></div>
+        <div class="icons">
+          <a href="mailto:catherinebassettboynton@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="section" style="margin-bottom: 30px;">
+        <div class="about-title">Details are everything.</div>
+        <div class="about-desc">
+          I am a dedicated and detail-oriented student with a passion for public policy, administration, and psychology. I am seeking opportunities to apply my research, legislative, and analytical skills in impactful roles.
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">EDUCATION</div>
+        <div class="edu">
+          <div class="edu-item">
+            <div class="edu-date">May 2025</div>
+            <div class="edu-details">
+              <div class="edu-degree">B.A Political Science (Public Policy & Administration), B.S Psychology (Dual Degree)</div>
+              <div class="edu-school">Virginia Commonwealth University Honors College</div>
+              <div class="edu-extra">GPA: 3.86 &mdash; Richmond, VA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">SKILLS</div>
+        <div class="skills-list">
+          <div class="skill">Google Workspace</div>
+          <div class="skill">Microsoft Word</div>
+          <div class="skill">Powerpoint</div>
+          <div class="skill">Virginia LIS</div>
+          <div class="skill">Data Entry</div>
+          <div class="skill">Zotero</div>
+          <div class="skill">Slack</div>
+          <div class="skill">Asana</div>
+          <div class="skill">Perplexity.ai</div>
+          <div class="skill">LucidSpark</div>
+          <div class="skill">Canva</div>
+          <div class="skill">MailChimp</div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">EXPERIENCE</div>
+        <div class="exp">
+          <div class="exp-item">
+            <div class="exp-date">Jan 2025 - Feb 2025</div>
+            <div class="exp-details">
+              <div class="exp-role">Senate 2025 Session Intern</div>
+              <div class="exp-org">Virginia General Assembly - Senator Ebbin, Richmond, VA</div>
+              <ul class="exp-list">
+                <li>Sorted 2500+ emails, identified key policy issues for constituents, drafted 40% of constituent email responses; tracked legislation and provided real-time legislative updates</li>
+                <li>Answered telephone inquiries, welcomed visitors and directed them to the appropriate resources or staff members</li>
+                <li>Served as intern office liaison for the Senate General Laws & Technology Committee, provided detailed meeting summaries to senior staff</li>
+                <li>Collaborated and delegated tasks to fellow interns as needed to efficiently complete assignments</li>
+                <li>Contributed topic proposals and section suggestions for weekly newsletters, such as explaining Crossover Day and legislative updates on Senator Ebbin’s bills</li>
+              </ul>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">Sep 2024 - May 2025</div>
+            <div class="exp-details">
+              <div class="exp-role">Research Intern - Social Network Mapping of the WaSH sector in India</div>
+              <div class="exp-org">L. Douglas Wilder School - Dr. Shruti Syal, Richmond, VA</div>
+              <ul class="exp-list">
+                <li>Annotated 50+ public laws and policy briefs to identify key actors and stakeholders in sanitation and remediation efforts in Delhi, contributing to a comprehensive social network map</li>
+                <li>Used collaborative online whiteboards to develop concept maps for complex policy ideas</li>
+                <li>Responsibly leveraged LLM-based AI platforms to perform precise legal document analysis via guided iterative procedures, facilitating the extraction of targeted data elements</li>
+              </ul>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-date">Sep 2023 - May 2024</div>
+            <div class="exp-details">
+              <div class="exp-role">Undergraduate Research Assistant</div>
+              <div class="exp-org">Innovation in Child and Family Wellness Research Group, Richmond, VA</div>
+              <ul class="exp-list">
+                <li>Collected and encoded research survey data from 75+ Central Virginia public school students</li>
+                <li>Managed project refinement notes for Rise Above, a novel school-based, trauma-informed, social-emotional learning program for children and adolescents</li>
+                <li>Wrote, edited, and produced application materials for 3 grant applications</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">RELEVANT COURSEWORK</div>
+        <div class="coursework">
+          <div class="coursework-item">
+            <div class="edu-details">
+              <div class="edu-degree">Political Science Independent Study - Dr. Alex Keena</div>
+              <div class="edu-extra">Conducted an extensive literature review to analyze the impact of variations in U.S. state education funding policies on the availability of school-based mental health resources within K-12 public schools</div>
+            </div>
+          </div>
+          <div class="coursework-item">
+            <div class="edu-details">
+              <div class="edu-degree">Political Science Capstone Project</div>
+              <div class="edu-extra">Designed a mixed-methods research study exploring the effects of U.S. state and local education funding policies on the implementation of federal policy, with a focus on mitigating the K-12 achievement gap</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="resume-btn" href="CBoynton_Resume.pdf" download>Download Resume</a>
+    </div>
+  </div>
+</body>
+</html> 
